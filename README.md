@@ -8,20 +8,21 @@
 
 ![Java](https://img.shields.io/badge/Java-21-orange?style=for-the-badge&logo=openjdk)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.x-6DB33F?style=for-the-badge&logo=springboot)
+![Gradle](https://img.shields.io/badge/Gradle-8.x-02303A?style=for-the-badge&logo=gradle)
 ![React](https://img.shields.io/badge/React-18-61DAFB?style=for-the-badge&logo=react)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-4169E1?style=for-the-badge&logo=postgresql)
-![JWT](https://img.shields.io/badge/JWT-Authentication-black?style=for-the-badge)
+![JWT](https://img.shields.io/badge/JWT-Secure-black?style=for-the-badge)
+![Render](https://img.shields.io/badge/Render-Cloud-46E3B7?style=for-the-badge&logo=render)
+![Vercel](https://img.shields.io/badge/Vercel-Frontend-black?style=for-the-badge&logo=vercel)
 
-A production-ready **Full Stack Habit Tracking Application** built using **Spring Boot**, **React**, **TypeScript**, and **Neon PostgreSQL**.
-
-Track habits, monitor progress, analyze consistency, and achieve your goals with an intuitive and responsive interface.
+A production-ready Full-Stack Habit Tracking application built using **Spring Boot**, **React**, **TypeScript**, and **Neon PostgreSQL**.
 
 </div>
 
 ---
 
-# 🌐 Live Application
+# 🌐 Live Demo
 
 ### 🎨 Frontend
 
@@ -35,11 +36,11 @@ https://core-tracker-api-tyf8.onrender.com
 
 # 📦 Source Code
 
-### 🎨 Frontend Repository
+## 🎨 Frontend Repository
 
 https://github.com/Narra-Uttam-Kumar/core-tracker-ui
 
-### ⚙️ Backend Repository
+## ⚙️ Backend Repository
 
 https://github.com/Narra-Uttam-Kumar/core-tracker-api
 
@@ -48,19 +49,18 @@ https://github.com/Narra-Uttam-Kumar/core-tracker-api
 # ✨ Features
 
 - 🔐 Secure User Authentication
-- 🛡 Spring Security
 - 🔑 JWT Authentication
+- 🛡 Spring Security
 - 🔒 BCrypt Password Encryption
 - 📅 Daily Habit Tracking
 - 📆 Monthly Habit Matrix
 - 📊 Analytics Dashboard
-- 📈 Detailed Statistics
+- 📈 Detailed Habit Statistics
 - 🎯 Habit Goal Management
-- 📱 Responsive UI
+- 📱 Responsive Design
 - ☁️ Cloud Deployment
 - ⚡ RESTful APIs
-- 🗄 PostgreSQL Database
-- 📊 Interactive Charts
+- 🗄 PostgreSQL Persistence
 
 ---
 
@@ -94,15 +94,11 @@ https://github.com/Narra-Uttam-Kumar/core-tracker-api
                           ▼
                 Spring Boot Backend
                           │
-       ┌──────────────────┼──────────────────┐
-       ▼                  ▼                  ▼
- Controllers          Services        Spring Security
+          Spring Security + JWT Authentication
                           │
-                    JWT Authentication
+                    Service Layer
                           │
-                    Spring Data JPA
-                          │
-                      Hibernate ORM
+               Spring Data JPA + Hibernate
                           │
                           ▼
                Neon PostgreSQL Database
@@ -110,16 +106,17 @@ https://github.com/Narra-Uttam-Kumar/core-tracker-api
 
 ---
 
-# 🛠️ Technology Stack
+# 🛠 Technology Stack
 
 | Category | Technologies |
 |-----------|--------------|
-| Frontend | React 18, TypeScript, Vite |
-| Backend | Java 21, Spring Boot 3 |
+| Language | Java 21, TypeScript |
+| Frontend | React 18, Vite |
+| Backend | Spring Boot 3 |
 | Security | Spring Security, JWT, BCrypt |
+| ORM | Spring Data JPA, Hibernate |
 | Database | PostgreSQL (Neon) |
-| ORM | Hibernate, Spring Data JPA |
-| Build Tool | Maven, npm |
+| Build Tool | Gradle |
 | Deployment | Vercel, Render, Neon |
 
 ---
@@ -130,11 +127,11 @@ https://github.com/Narra-Uttam-Kumar/core-tracker-api
 CORE-TRACKER
 
 ├── frontend
+│   ├── src
 │   ├── components
 │   ├── hooks
 │   ├── utils
-│   ├── assets
-│   └── App.tsx
+│   └── assets
 │
 ├── backend
 │   ├── controller
@@ -168,15 +165,12 @@ POST /api/auth/register
 POST /api/auth/login
 ```
 
-## Habit APIs
+## Habits
 
 ```http
 GET    /api/habits
-
 POST   /api/habits/toggle
-
 PUT    /api/habits/goals
-
 GET    /api/habits/analytics
 ```
 
@@ -187,9 +181,9 @@ GET    /api/habits/analytics
 - JWT Authentication
 - Spring Security
 - BCrypt Password Encryption
-- Stateless Session Management
-- Protected REST APIs
+- Stateless Authentication
 - CORS Configuration
+- Protected REST APIs
 
 ---
 
@@ -205,15 +199,11 @@ GET    /api/habits/analytics
 
 # ⚙️ Local Installation
 
-## Clone Backend
+## Clone the repositories
 
 ```bash
 git clone https://github.com/Narra-Uttam-Kumar/core-tracker-api.git
-```
 
-## Clone Frontend
-
-```bash
 git clone https://github.com/Narra-Uttam-Kumar/core-tracker-ui.git
 ```
 
@@ -224,9 +214,17 @@ git clone https://github.com/Narra-Uttam-Kumar/core-tracker-ui.git
 ```bash
 cd core-tracker-api
 
-mvn clean install
+./gradlew build
 
-mvn spring-boot:run
+./gradlew bootRun
+```
+
+For Windows:
+
+```bash
+gradlew.bat build
+
+gradlew.bat bootRun
 ```
 
 ---
@@ -249,17 +247,11 @@ npm run dev
 
 ```env
 DB_URL=jdbc:postgresql://<host>/<database>?sslmode=require
-
 DB_USERNAME=<username>
-
 DB_PASSWORD=<password>
-
 JWT_SECRET=<your-secret>
-
 ALLOWED_ORIGINS=https://core-tracker-ui.vercel.app
 ```
-
----
 
 ## Frontend
 
@@ -272,28 +264,28 @@ VITE_API_BASE_URL=https://core-tracker-api-tyf8.onrender.com/api
 # 🚀 Future Enhancements
 
 - 🤖 AI Habit Recommendations
-- 📧 Email Notifications
 - 📱 Mobile Application
 - 🏆 Habit Streak Rewards
-- 📊 Advanced Reports
+- 📧 Email Notifications
+- 📊 Advanced Analytics
 - 📤 CSV / Excel Export
 - 🌙 Dark & Light Themes
 - 🔔 Push Notifications
 
 ---
 
-# 💼 What This Project Demonstrates
+# 💼 Skills Demonstrated
 
-- Enterprise Java Development
 - Full Stack Development
-- REST API Design
-- Authentication & Authorization
-- Spring Security
+- Enterprise Java Development
+- Spring Boot REST APIs
+- Spring Security & JWT
+- React + TypeScript
 - PostgreSQL Database Design
-- React + TypeScript Development
+- Hibernate ORM
 - Cloud Deployment
 - Clean Architecture
-- Production Ready Application
+- Production-Ready Development
 
 ---
 
@@ -303,25 +295,16 @@ VITE_API_BASE_URL=https://core-tracker-api-tyf8.onrender.com/api
 
 **Java Full Stack Developer**
 
-### Skills
+### Technologies
 
-- Java
-- Spring Boot
-- Spring Security
-- React
-- TypeScript
-- PostgreSQL
-- Hibernate
-- Spring Data JPA
-- REST APIs
-- JWT Authentication
+Java • Spring Boot • Spring Security • Gradle • React • TypeScript • PostgreSQL • Hibernate • REST APIs • JWT
 
 ---
 
 <div align="center">
 
-## ⭐ If you found this project helpful, consider giving it a Star!
+## ⭐ If you like this project, please give it a Star!
 
-Built with ❤️ using **Spring Boot**, **React**, **Render**, **Vercel**, and **Neon PostgreSQL**
+Built with ❤️ using Spring Boot, React, Gradle, Render, Vercel & Neon PostgreSQL.
 
 </div>
