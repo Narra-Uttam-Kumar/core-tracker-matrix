@@ -1,7 +1,6 @@
+<div align="center">
 
 # 🚀 CORE.MATRIX
-
-<div align="center">
 
 ### Modern Full-Stack Habit Tracking Platform
 
@@ -14,16 +13,43 @@
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Neon-4169E1?style=for-the-badge&logo=postgresql)
 ![JWT](https://img.shields.io/badge/JWT-Authentication-black?style=for-the-badge)
 
-A production-ready full-stack Habit Tracking application built with **Spring Boot**, **React**, **TypeScript**, and **Neon PostgreSQL**.
+A production-ready **Full Stack Habit Tracking Application** built using **Spring Boot**, **React**, **TypeScript**, and **Neon PostgreSQL**.
+
+Track habits, monitor progress, analyze consistency, and achieve your goals with an intuitive and responsive interface.
 
 </div>
 
 ---
 
+# 🌐 Live Application
+
+### 🎨 Frontend
+
+https://core-tracker-ui.vercel.app/
+
+### ⚙️ Backend API
+
+https://core-tracker-api-tyf8.onrender.com
+
+---
+
+# 📦 Source Code
+
+### 🎨 Frontend Repository
+
+https://github.com/Narra-Uttam-Kumar/core-tracker-ui
+
+### ⚙️ Backend Repository
+
+https://github.com/Narra-Uttam-Kumar/core-tracker-api
+
+---
+
 # ✨ Features
 
-- 🔐 JWT Authentication
-- 🛡️ Spring Security
+- 🔐 Secure User Authentication
+- 🛡 Spring Security
+- 🔑 JWT Authentication
 - 🔒 BCrypt Password Encryption
 - 📅 Daily Habit Tracking
 - 📆 Monthly Habit Matrix
@@ -32,66 +58,68 @@ A production-ready full-stack Habit Tracking application built with **Spring Boo
 - 🎯 Habit Goal Management
 - 📱 Responsive UI
 - ☁️ Cloud Deployment
+- ⚡ RESTful APIs
+- 🗄 PostgreSQL Database
+- 📊 Interactive Charts
 
 ---
 
-# 🔗 Project Links
+# 📸 Screenshots
 
-## 🎨 Frontend Repository
-> Replace with your repository URL
+| Login | Register |
+|-------|----------|
+| ![](screenshots/login.png) | ![](screenshots/register.png) |
 
-`https://github.com/Narra-Uttam-Kumar/core-tracker-ui`
+| Habit Matrix | Analytics Dashboard |
+|--------------|---------------------|
+| ![](screenshots/sheet.png) | ![](screenshots/analytics.png) |
 
-## ⚙️ Backend Repository
-> Replace with your repository URL
+| Detailed Analytics | Year Overview |
+|--------------------|---------------|
+| ![](screenshots/detailed.png) | ![](screenshots/year.png) |
 
-`https://github.com/Narra-Uttam-Kumar/core-tracker-api`
-
-## 🌐 Live Frontend (Vercel)
-
-`https://core-tracker-ui.vercel.app/`
-
-## 🚀 Backend API (Render)
-
-`https://core-tracker-api-tyf8.onrender.com`
-
-## 🗄️ Database
-
-- Neon PostgreSQL (Serverless)
+| Habit Details |
+|---------------|
+| ![](screenshots/habit.png) |
 
 ---
 
-# 🏗️ Architecture
+# 🏗️ System Architecture
 
 ```text
-React + TypeScript (Vite)
-          │
-          ▼
- REST API (HTTPS)
-          │
-          ▼
- Spring Boot Backend
-          │
- Spring Security + JWT
-          │
-          ▼
- Spring Data JPA
-          │
-          ▼
- Neon PostgreSQL
+                 React + TypeScript (Vite)
+                          │
+                     HTTPS REST API
+                          │
+                          ▼
+                Spring Boot Backend
+                          │
+       ┌──────────────────┼──────────────────┐
+       ▼                  ▼                  ▼
+ Controllers          Services        Spring Security
+                          │
+                    JWT Authentication
+                          │
+                    Spring Data JPA
+                          │
+                      Hibernate ORM
+                          │
+                          ▼
+               Neon PostgreSQL Database
 ```
 
 ---
 
 # 🛠️ Technology Stack
 
-| Layer | Technology |
-|------|------------|
+| Category | Technologies |
+|-----------|--------------|
 | Frontend | React 18, TypeScript, Vite |
 | Backend | Java 21, Spring Boot 3 |
 | Security | Spring Security, JWT, BCrypt |
 | Database | PostgreSQL (Neon) |
 | ORM | Hibernate, Spring Data JPA |
+| Build Tool | Maven, npm |
 | Deployment | Vercel, Render, Neon |
 
 ---
@@ -99,37 +127,35 @@ React + TypeScript (Vite)
 # 📂 Project Structure
 
 ```text
-core-matrix/
-├── frontend/
-│   ├── components/
-│   ├── hooks/
-│   ├── utils/
-│   └── assets/
-├── backend/
-│   ├── controller/
-│   ├── service/
-│   ├── repository/
-│   ├── security/
-│   ├── model/
-│   └── config/
-├── screenshots/
+CORE-TRACKER
+
+├── frontend
+│   ├── components
+│   ├── hooks
+│   ├── utils
+│   ├── assets
+│   └── App.tsx
+│
+├── backend
+│   ├── controller
+│   ├── service
+│   ├── repository
+│   ├── security
+│   ├── model
+│   ├── dto
+│   └── config
+│
+├── screenshots
+│   ├── login.png
+│   ├── register.png
+│   ├── sheet.png
+│   ├── analytics.png
+│   ├── detailed.png
+│   ├── year.png
+│   └── habit.png
+│
 └── README.md
 ```
-
----
-
-# 📸 Screenshots
-
-Place your screenshots in a `screenshots` folder.
-
-- login.png
-- register.png
-- sheet.png
-- monthly.png
-- analytics.png
-- detailed.png
-- year.png
-- habit.png
 
 ---
 
@@ -142,30 +168,76 @@ POST /api/auth/register
 POST /api/auth/login
 ```
 
-## Habits
+## Habit APIs
 
 ```http
 GET    /api/habits
+
 POST   /api/habits/toggle
+
 PUT    /api/habits/goals
+
 GET    /api/habits/analytics
 ```
 
 ---
 
-# ⚙️ Installation
+# 🔐 Security
+
+- JWT Authentication
+- Spring Security
+- BCrypt Password Encryption
+- Stateless Session Management
+- Protected REST APIs
+- CORS Configuration
+
+---
+
+# ☁️ Deployment
+
+| Component | Platform |
+|-----------|----------|
+| Frontend | Vercel |
+| Backend | Render |
+| Database | Neon PostgreSQL |
+
+---
+
+# ⚙️ Local Installation
+
+## Clone Backend
+
+```bash
+git clone https://github.com/Narra-Uttam-Kumar/core-tracker-api.git
+```
+
+## Clone Frontend
+
+```bash
+git clone https://github.com/Narra-Uttam-Kumar/core-tracker-ui.git
+```
+
+---
 
 ## Backend
 
 ```bash
+cd core-tracker-api
+
 mvn clean install
+
 mvn spring-boot:run
 ```
+
+---
 
 ## Frontend
 
 ```bash
+cd core-tracker-ui
+
 npm install
+
 npm run dev
 ```
 
@@ -177,11 +249,17 @@ npm run dev
 
 ```env
 DB_URL=jdbc:postgresql://<host>/<database>?sslmode=require
+
 DB_USERNAME=<username>
+
 DB_PASSWORD=<password>
-JWT_SECRET=<secret>
-ALLOWED_ORIGINS=<frontend-url>
+
+JWT_SECRET=<your-secret>
+
+ALLOWED_ORIGINS=https://core-tracker-ui.vercel.app
 ```
+
+---
 
 ## Frontend
 
@@ -191,41 +269,59 @@ VITE_API_BASE_URL=https://core-tracker-api-tyf8.onrender.com/api
 
 ---
 
-# ☁️ Deployment
+# 🚀 Future Enhancements
 
-| Component | Platform |
-|----------|----------|
-| Frontend | Vercel |
-| Backend | Render |
-| Database | Neon PostgreSQL |
+- 🤖 AI Habit Recommendations
+- 📧 Email Notifications
+- 📱 Mobile Application
+- 🏆 Habit Streak Rewards
+- 📊 Advanced Reports
+- 📤 CSV / Excel Export
+- 🌙 Dark & Light Themes
+- 🔔 Push Notifications
 
 ---
 
-# 🚀 Future Enhancements
+# 💼 What This Project Demonstrates
 
-- AI Habit Recommendations
-- Email Notifications
-- Mobile Application
-- Habit Streak Rewards
-- Export Reports
-- Dark/Light Themes
+- Enterprise Java Development
+- Full Stack Development
+- REST API Design
+- Authentication & Authorization
+- Spring Security
+- PostgreSQL Database Design
+- React + TypeScript Development
+- Cloud Deployment
+- Clean Architecture
+- Production Ready Application
 
 ---
 
 # 👨‍💻 Author
 
-**Uttam Kumar Reddy**
+## Uttam Kumar Reddy
 
-Java Full Stack Developer
+**Java Full Stack Developer**
 
-**Skills:** Java • Spring Boot • React • TypeScript • PostgreSQL • REST APIs • JWT • Spring Security
+### Skills
+
+- Java
+- Spring Boot
+- Spring Security
+- React
+- TypeScript
+- PostgreSQL
+- Hibernate
+- Spring Data JPA
+- REST APIs
+- JWT Authentication
 
 ---
 
 <div align="center">
 
-### ⭐ If you like this project, please give it a Star!
+## ⭐ If you found this project helpful, consider giving it a Star!
 
-Built with ❤️ using Spring Boot, React, Render, Vercel & Neon PostgreSQL.
+Built with ❤️ using **Spring Boot**, **React**, **Render**, **Vercel**, and **Neon PostgreSQL**
 
 </div>
